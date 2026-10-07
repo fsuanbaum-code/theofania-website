@@ -3,6 +3,10 @@
 import sys, pathlib
 out = pathlib.Path(sys.argv[1])
 
+# Replace with your real Calendly link.
+CALENDLY = "https://calendly.com/your-calendly-name"
+BOOK = f'href="{CALENDLY}" target="_blank" rel="noopener"'
+
 LOGO = '''<svg viewBox="0 0 200 200" role="img" aria-label="Theofania" fill="none" stroke="#7a3f2c" stroke-width="3" stroke-linecap="round">
   <line x1="100" y1="6" x2="100" y2="194"/>
   <path d="M100 30 A70 70 0 1 1 30 100 L12 100"/>
@@ -123,7 +127,7 @@ page("index.html", "Theofania · Past Life Regression in Berlin and Online",
           <h1>Wondering who you were in a past life? What your life purpose is?</h1>
           <p>Find out with a past life regression session in Berlin and online.</p>
           <p>Go deeper into yourself and relaxation to connect with your higher wisdom. You have all the answers you need.</p>
-          <a class="btn" href="contact.html">Book Your Journey</a>
+          <a class="btn" {BOOK}>Book Your Journey</a>
         </div>
       </div>
     </section>
@@ -163,7 +167,7 @@ page("index.html", "Theofania · Past Life Regression in Berlin and Online",
             <figcaption>Elena R., Online</figcaption>
           </figure>
         </div>
-        <a class="btn" href="contact.html">Book Your Journey</a>
+        <a class="btn" {BOOK}>Book Your Journey</a>
       </div>
     </section>
 
@@ -185,7 +189,7 @@ def service(fname, title, eyebrow, h1, lead, img, sections, where):
         <span class="eyebrow">{eyebrow}</span>
         <h1>{h1}</h1>
         <p class="lead">{lead}</p>
-        <a class="btn" href="contact.html">Book a session</a>
+        <a class="btn" {BOOK}>Book a session</a>
       </div>
     </section>
 
@@ -201,7 +205,7 @@ def service(fname, title, eyebrow, h1, lead, img, sections, where):
     <section class="section section-linen center">
       <div class="wrap">
         <h2>{where}</h2>
-        <p><a class="btn" href="contact.html">Book Your Journey</a></p>
+        <p><a class="btn" {BOOK}>Book Your Journey</a></p>
       </div>
     </section>
 ''')
@@ -248,7 +252,7 @@ page("about.html", "About · Theofania", "About Fani and Theofania.", '''    <se
     </section>
 ''')
 
-page("contact.html", "Contact · Theofania", "Book a session or get in touch with Theofania.", '''    <section class="page-hero">
+page("contact.html", "Contact · Theofania", "Book a session or get in touch with Theofania.", f'''    <section class="page-hero">
       <div class="wrap">
         <span class="eyebrow">Contact</span>
         <h1>Book Your Journey</h1>
@@ -267,7 +271,8 @@ page("contact.html", "Contact · Theofania", "Book a session or get in touch wit
         </div>
         <div class="prose">
           <h2>Online booking</h2>
-          <p class="todo">A booking calendar or contact form goes here once a free tool is chosen.</p>
+          <p>Pick a time that suits you in my booking calendar. You'll get a confirmation by email straight away.</p>
+          <p><a class="btn" {BOOK}>Book on Calendly</a></p>
         </div>
       </div>
     </section>
@@ -300,7 +305,7 @@ page("privacy.html", "Privacy · Theofania", "Privacy policy", '''    <section c
       <div class="wrap prose">
         <h1>Privacy Policy</h1>
         <p>This website does not use cookies, analytics or tracking. Fonts and images are served from this site itself, so no data is sent to third parties when you visit.</p>
-        <p class="todo">Add a full Datenschutzerkl&auml;rung here (who is responsible, the hosting provider, how contact and booking data is handled). Free generators such as the one from e-recht24 can produce it.</p>
+        <p class="todo">Add a full Datenschutzerkl&auml;rung here (who is responsible, the hosting provider, and that bookings are handled by Calendly). Free generators such as the one from e-recht24 can produce it.</p>
       </div>
     </section>
 ''')
