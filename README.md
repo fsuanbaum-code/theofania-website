@@ -13,4 +13,4 @@ from the site itself (no Google or other third-party requests, which keeps it GD
 
 ## Hosting
 
-Served by GitHub Pages from the `main` branch root.
+Served by GitHub Pages from the `main` branch root at https://theofania.net (see `CNAME`).
